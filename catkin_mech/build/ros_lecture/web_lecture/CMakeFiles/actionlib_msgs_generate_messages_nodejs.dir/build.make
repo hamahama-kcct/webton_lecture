@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/webton/catkin_mech/src
+CMAKE_SOURCE_DIR = /home/webton_lecture/catkin_mech/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/webton/catkin_mech/build
+CMAKE_BINARY_DIR = /home/webton_lecture/catkin_mech/build
 
 # Utility rule file for actionlib_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/b
 .PHONY : ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 
 ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/webton/catkin_mech/build/ros_lecture/web_lecture && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 
 ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/webton/catkin_mech/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/webton/catkin_mech/src /home/webton/catkin_mech/src/ros_lecture/web_lecture /home/webton/catkin_mech/build /home/webton/catkin_mech/build/ros_lecture/web_lecture /home/webton/catkin_mech/build/ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/webton_lecture/catkin_mech/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/webton_lecture/catkin_mech/src /home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture /home/webton_lecture/catkin_mech/build /home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture /home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_lecture/web_lecture/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/depend
 

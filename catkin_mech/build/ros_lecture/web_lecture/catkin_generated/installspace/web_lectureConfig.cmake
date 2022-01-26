@@ -67,14 +67,14 @@ set(web_lecture_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(web_lecture_SOURCE_PREFIX /home/webton/catkin_mech/src/ros_lecture/web_lecture)
-  set(web_lecture_DEVEL_PREFIX /home/webton/catkin_mech/devel)
+  set(web_lecture_SOURCE_PREFIX /home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture)
+  set(web_lecture_DEVEL_PREFIX /home/webton_lecture/catkin_mech/devel)
   set(web_lecture_INSTALL_PREFIX "")
   set(web_lecture_PREFIX ${web_lecture_DEVEL_PREFIX})
 else()
   set(web_lecture_SOURCE_PREFIX "")
   set(web_lecture_DEVEL_PREFIX "")
-  set(web_lecture_INSTALL_PREFIX /home/webton/catkin_mech/install)
+  set(web_lecture_INSTALL_PREFIX /home/webton_lecture/catkin_mech/install)
   set(web_lecture_PREFIX ${web_lecture_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/webton/catkin_mech/install/lib;/home/ros1_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/webton_lecture/catkin_mech/install/lib;/home/webton_lecture/catkin_mech/devel/lib;/home/ros1_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

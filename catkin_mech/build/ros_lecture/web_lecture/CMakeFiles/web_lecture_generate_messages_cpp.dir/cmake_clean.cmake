@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/web_lecture_generate_messages_cpp"
-  "/home/webton/catkin_mech/devel/include/web_lecture/StringStamp.h"
-  "/home/webton/catkin_mech/devel/include/web_lecture/StringStampList.h"
+  "/home/webton_lecture/catkin_mech/devel/include/web_lecture/StringStamp.h"
+  "/home/webton_lecture/catkin_mech/devel/include/web_lecture/StringStampList.h"
 )
 
 # Per-language clean rules from dependency scanning.

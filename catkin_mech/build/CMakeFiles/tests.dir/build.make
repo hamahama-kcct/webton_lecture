@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/webton/catkin_mech/src
+CMAKE_SOURCE_DIR = /home/webton_lecture/catkin_mech/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/webton/catkin_mech/build
+CMAKE_BINARY_DIR = /home/webton_lecture/catkin_mech/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/webton/catkin_mech/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/webton/catkin_mech/src /home/webton/catkin_mech/src /home/webton/catkin_mech/build /home/webton/catkin_mech/build /home/webton/catkin_mech/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/webton_lecture/catkin_mech/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/webton_lecture/catkin_mech/src /home/webton_lecture/catkin_mech/src /home/webton_lecture/catkin_mech/build /home/webton_lecture/catkin_mech/build /home/webton_lecture/catkin_mech/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

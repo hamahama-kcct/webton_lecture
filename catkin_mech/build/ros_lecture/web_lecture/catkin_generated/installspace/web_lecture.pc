@@ -1,4 +1,4 @@
-prefix=/home/webton/catkin_mech/install
+prefix=/home/webton_lecture/catkin_mech/install
 
 Name: web_lecture
 Description: Description of web_lecture

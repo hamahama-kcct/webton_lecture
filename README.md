@@ -30,7 +30,11 @@ http://localhost:8085/web_lecture/Webtoon_1.html
 ```
 
 # 参考
-roswww部分 https://qiita.com/srs/items/f01f1a6732f49163a772
+roswww部分 
+<br>
+https://qiita.com/srs/items/f01f1a6732f49163a772
 
 
-gamepad部分ここのソースコードを書き換えた気がする https://qiita.com/srs/items/ab2261cfd20ba661ef3a
+gamepad部分ここのソースコードを書き換えた気がする 
+<br>
+https://qiita.com/srs/items/ab2261cfd20ba661ef3a

@@ -1,8 +1,8 @@
-# Install script for directory: /home/webton/catkin_mech/src/ros_lecture/web_lecture
+# Install script for directory: /home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/webton/catkin_mech/install")
+  set(CMAKE_INSTALL_PREFIX "/home/webton_lecture/catkin_mech/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,57 +38,57 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/msg" TYPE FILE FILES "/home/webton/catkin_mech/src/ros_lecture/web_lecture/msg/StringStamp.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/msg" TYPE FILE FILES "/home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture/msg/StringStamp.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/srv" TYPE FILE FILES "/home/webton/catkin_mech/src/ros_lecture/web_lecture/srv/StringStampList.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/srv" TYPE FILE FILES "/home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture/srv/StringStampList.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/cmake" TYPE FILE FILES "/home/webton/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/cmake" TYPE FILE FILES "/home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/webton/catkin_mech/devel/include/web_lecture")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/webton_lecture/catkin_mech/devel/include/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/webton/catkin_mech/devel/share/roseus/ros/web_lecture")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/webton_lecture/catkin_mech/devel/share/roseus/ros/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/webton/catkin_mech/devel/share/common-lisp/ros/web_lecture")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/webton_lecture/catkin_mech/devel/share/common-lisp/ros/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/webton/catkin_mech/devel/share/gennodejs/ros/web_lecture")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/webton_lecture/catkin_mech/devel/share/gennodejs/ros/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/webton/catkin_mech/devel/lib/python2.7/dist-packages/web_lecture")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/webton_lecture/catkin_mech/devel/lib/python2.7/dist-packages/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/webton/catkin_mech/devel/lib/python2.7/dist-packages/web_lecture")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/webton_lecture/catkin_mech/devel/lib/python2.7/dist-packages/web_lecture")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/webton/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/cmake" TYPE FILE FILES "/home/webton/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/cmake" TYPE FILE FILES "/home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lecture-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture/cmake" TYPE FILE FILES
-    "/home/webton/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lectureConfig.cmake"
-    "/home/webton/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lectureConfig-version.cmake"
+    "/home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lectureConfig.cmake"
+    "/home/webton_lecture/catkin_mech/build/ros_lecture/web_lecture/catkin_generated/installspace/web_lectureConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture" TYPE FILE FILES "/home/webton/catkin_mech/src/ros_lecture/web_lecture/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/web_lecture" TYPE FILE FILES "/home/webton_lecture/catkin_mech/src/ros_lecture/web_lecture/package.xml")
 endif()
 
