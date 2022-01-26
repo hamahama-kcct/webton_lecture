@@ -1,0 +1,83 @@
+:root {
+    --key_size: 50px;
+}
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+    }
+
+#key_box{
+    position: absolute;
+    top: 200px;
+    left: 800px;
+    width: 200;
+    height: 200;
+    background-color: rgb(65, 65, 57);
+}
+#running_Wkey {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    width: var(--key_size);
+    height: var(--key_size);
+    background-color: rgb(197, 197, 151);
+    text-align: center;
+    }
+#running_Akey {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: var(--key_size);
+    height: var(--key_size);
+    background-color: rgb(212, 212, 178);
+    text-align: center;
+    }
+#running_Skey {
+    position: absolute;
+    top: 190px;
+    left: 100px;
+    width: var(--key_size);
+    height: var(--key_size);
+    background-color: rgb(184, 184, 146);
+    text-align: center;
+    }
+#running_Dkey {
+    position: absolute;
+    top: 100px;
+    left: 190px;
+    width: var(--key_size);
+    height: var(--key_size);
+    background-color: rgb(189, 189, 146);
+    text-align: center;
+    }
+
+#running_Wkey.pressing {
+    background-color: rgb(26, 69, 109);
+    color: white;
+    font-weight: bold;
+    }
+#running_Akey.pressing {
+    background-color: rgb(26, 69, 109);
+    color: white;
+    font-weight: bold;
+    }
+#running_Skey.pressing {
+    background-color: rgb(26, 69, 109);
+    color: white;
+    font-weight: bold;
+    }
+  #running_Dkey.pressing {
+    background-color: rgb(26, 69, 109);
+    color: white;
+    font-weight: bold;
+    }

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>ROS UI</title>
+    <meta charset="UTF-8">
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+    .full_picture{
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+    </style>
+    <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    <script src="ROS_send.js"></script>
+    <script type="text/javascript" src="ROS_ope_2.js"></script>   <!-- UI -->
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <link rel="stylesheet" type="text/css" href="ROS_ope_2.css">   <!-- UI -->
+    <title>ROS Image Web Viewer</title>  
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+    .full_picture{
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+    </style>
+
+  </head>
+
+  <body>
+    <script>
+      var topic_name = "/usb_cam/image_raw";
+      //document.write("<img class='full_picture' src='http://192.168.2.131:8080/stream?topic=/usb_cam/image_raw'></img>");
+      document.write("<img src='http://"+location.hostname +":8080/stream?topic=/usb_cam/image_raw&type=ros_compressed'></img>");
+    </script>
+    
+    <p>RosBridge status： <label id="rosbridge_status">Disconnect</label></p>
+    <p>Gamepad status：   <label id="gamepad_status">Disconnect</label></p>
+    <p>Gamepad buttons：   <label id="gamepad_buttons">None</label></p>
+    
+    <p>W buttons：   <label id="W">None</label></p>
+    <p>S buttons：   <label id="S">None</label></p>
+    <p>D buttons：   <label id="D">None</label></p>
+    <p>A buttons：   <label id="A">None</label></p>
+
+    <p>Gamepad axes：   <label id="gamepad_axes">None</label></p>
+
+    <!-- KeyPad -->
+    <div id="key_box" style="padding: 10px; width: 250px; height: 250px; border: 1px solid #333333;">
+      <!-- W_key -->
+      <div id="running_Wkey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>W</div>
+      <!-- A_key -->
+      <div id="running_Akey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>A</div>
+      <!-- S_key -->
+      <div id="running_Skey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>S</div>
+      <!-- D_key -->
+      <div id="running_Dkey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>D</div>
+    </div>
+    
+
+    <p>操作方法 <br>前： <kbd>W</kbd> <br>左： <kbd>A</kbd> <br>後： <kbd>S</kbd> <br>右： <kbd>D</kbd></p>
+  </body>
+
+</html>

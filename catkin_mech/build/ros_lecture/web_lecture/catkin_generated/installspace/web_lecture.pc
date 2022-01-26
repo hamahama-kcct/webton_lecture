@@ -1,0 +1,8 @@
+prefix=/home/webton/catkin_mech/install
+
+Name: web_lecture
+Description: Description of web_lecture
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,86 @@
+:root {
+    --box_size:35vh;
+    --key_size: 10vh;
+    --key_margin: 0.8vh;
+    
+}
+
+.title {
+    font-family:"arial black"; font-size:60px; text-align:center; color:rgb(255, 255, 255); text-shadow: #000 4px 1px 0;
+    }
+
+
+
+.monitor {
+    text-align: center; top: 20vh; margin: 0 auto; font-size: 10px; width: 50%;
+    }
+
+.manual {
+    top: 5vh; float:right;
+}
+
+body {
+    /* 背景色指定 */
+ background-color:#3a6f92;
+ color:#dbdbdb;
+ font-family: sans-serif;
+ }
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+    }
+
+btn {
+    text-align:center; height:50px; line-height:50px;
+}
+
+.keypad {
+    position:absolute; top:50vh; left:5vh;
+}
+
+.key_box {
+    padding: 10px; width: var(--box_size); height: var(--box_size); border: 1vh solid #333333; background-color: #D0DFE6;
+    }
+    #running_Wkey {
+        position:relative; top: var(--key_margin); margin-left: auto; margin-right: auto;
+        width: var(--key_size); height: var(--key_size); text-align: center; 
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    #running_Akey {
+        position: relative;  bottom:-2vh; float:left;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color:  #F71E35; border: 1px solid #333333;
+        }
+    #running_Dkey {
+        position: relative;  bottom:-2vh; float: right;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    #running_Skey {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -14vh;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color: #F71E35; border: 1px solid #333333;
+    }
+
+    #running_Wkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Akey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Skey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Dkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }

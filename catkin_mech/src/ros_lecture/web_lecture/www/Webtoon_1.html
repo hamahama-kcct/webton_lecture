@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="ja">
+
+  <head>
+
+    <title>Webt(oo)n</title>
+
+    <meta charset="UTF-8">
+
+    <style>
+    *{
+      margin: 0px; padding: 0px; border: 0px;
+    }
+    .full_picture{
+      width: 100vw; height: 100vh; object-fit: contain;
+    }
+    </style>
+
+    <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    <script type="text/javascript" src="Webtoon_1.js"></script>   <!-- UI -->
+    <script src="ROS_send.js"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <link rel="stylesheet" type="text/css" href="Webtoon_1.css">   <!-- UI -->
+
+    <title>ROS Image Web Viewer</title>  
+
+    <style>
+    *{
+      margin: 0px; padding: 0px; border: 0px;
+    }
+    .full_picture{
+      width: 100vw; height: 100vh; object-fit: contain;
+    }
+    </style>
+
+  </head>
+
+  <body>
+    
+    <h1 class="title"><a>Webt(oo)n Controler</a></h1>
+
+    <!-- Monitor -->
+    <div class="monitor">
+      <script>
+        var topic_name = "/usb_cam/image_raw";
+        //document.write("<img class='full_picture' src='http://192.168.2.131:8080/stream?topic=/usb_cam/image_raw'></img>");
+        document.write("<img src='http://"+location.hostname +":8080/stream?topic=/usb_cam/image_raw&type=ros_compressed'></img>");
+      </script>
+      
+      <p>RosBridge status： <label id="rosbridge_status">Disconnect</label></p>
+      <p>Gamepad status：   <label id="gamepad_status">Disconnect</label></p>
+      <p>Gamepad buttons：   <label id="gamepad_buttons">None</label></p>
+
+      <p>W buttons：   <label id="W">None</label></p>
+      <p>S buttons：   <label id="S">None</label></p>
+      <p>D buttons：   <label id="D">None</label></p>
+      <p>A buttons：   <label id="A">None</label></p>
+
+      <p>Gamepad axes：   <label id="gamepad_axes">None</label></p>
+    </div>
+
+    <div class="manual">
+      <p>操作方法 <br>前：<kbd>W</kbd>  後：<kbd>S</kbd> <br>左：<kbd>A</kbd>  右：<kbd>D</kbd>  <br>左回転：<kbd>J</kbd>  右回転：<kbd>L</kbd></p>
+    </div>
+
+    <div class="keypad1">
+      <!-- KeyPad -->
+      <div class="key_box1">
+        <!-- W_key -->
+        <div id="running_Wkey" class><btn>W</btn></div>
+        <!-- A_key -->
+        <div id="running_Akey" class><btn>A</btn></div>
+        <!-- D_key -->
+        <div id="running_Dkey" class><btn>D</btn></div>
+        <!-- S_key -->
+        <div id="running_Skey" class><btn>S</btn></div>
+      </div>
+    </div>
+
+    <div class="keypad2">
+      <!-- KeyPad -->
+      <div class="key_box2">
+        <!-- J_key -->
+        <div id="running_Jkey" class><btn>J</btn></div>
+        <!-- L_key -->
+        <div id="running_Lkey" class><btn>L</btn></div>
+      </div>
+    </div>
+
+    <div class="robot">
+      <div id="ui"></div>
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,301 @@
+/* ------------------------------------------------------------
+// 変数
+// ------------------------------------------------------------*/
+:root {
+    --box_size:35vh;
+    --key_size: 10vh;
+    --key_margin: 0.8vh;
+    --arrow_size: 8vh;
+    --circle_size:11vh;
+}
+
+/* ------------------------------------------------------------
+// ページ全体の設定
+// ------------------------------------------------------------*/
+body {
+    background-color:#3a6f92;  /* ページ背景色 */
+    color:#dbdbdb;
+    font-family: sans-serif;
+    }
+
+.title {
+    font-family:"arial black"; font-size:60px; text-align:center; color:rgb(255, 255, 255); text-shadow: #000 4px 1px 0;
+    }
+
+/* ------------------------------------------------------------
+// カメラ映像
+// ------------------------------------------------------------*/
+.monitor {
+    text-align: center; top: 20vh; margin: 0 auto; font-size: 10px; width: 50%;
+    }
+
+/* ------------------------------------------------------------
+// 操作方法
+// ------------------------------------------------------------*/
+.manual {
+    position:absolute; top:20vh; left:5vh; font-size: 2vh;
+}
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+    }
+
+/* ------------------------------------------------------------
+// 操作パッド
+// ------------------------------------------------------------*/
+btn {
+    text-align:center; height:50px; line-height:50px;
+}
+
+.keypad1 {
+    position:absolute; top:50vh; left:5vh;
+}
+.keypad2 {
+    position:absolute; top:70vh; right:5vh;
+}
+
+.key_box1 {
+    padding: 10px; width: var(--box_size); height: var(--box_size);
+    background-color: #D0DFE6; border: 1vh solid #333333;
+    }
+.key_box2 {
+    padding: 10px; width: var(--box_size); height: 15vh;
+    background-color: #D0DFE6; border: 1vh solid #333333;
+    }
+    /* 押される前 */
+    #running_Wkey {
+        position:relative; top: var(--key_margin); margin-left: auto; margin-right: auto;
+        width: var(--key_size); height: var(--key_size); text-align: center; 
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    #running_Akey {
+        position: relative;  bottom:-2vh; float:left;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color:  #F71E35; border: 1px solid #333333;
+        }
+    #running_Dkey {
+        position: relative;  bottom:-2vh; float: right;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    #running_Skey {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -14vh;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    #running_Jkey {
+        position: relative;  bottom:-2vh; float:left;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color:  #F71E35; border: 1px solid #333333;
+        }
+    #running_Lkey {
+        position: relative;  bottom:-2vh; float: right;
+        width: var(--key_size); height: var(--key_size); text-align: center;
+        background-color: #F71E35; border: 1px solid #333333;
+        }
+    /* 押された後 */
+    #running_Wkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Akey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Skey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Dkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Jkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    #running_Lkey.pressing {
+        background-color: #032030; color: white; font-weight: bold;
+        }
+    
+/* ------------------------------------------------------------
+// ロボット図
+// ------------------------------------------------------------*/
+.robot {
+    position: absolute; top: 20vh; right: 10vh; 
+    width: 32.5vh; height: 30vh;
+    background-image: url(ロボット.PNG); background-size: contain;
+}
+.img {
+    width : 200px; height : 200px;
+}
+    /* 上矢印 */
+    #ui.arrow_up{
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 0.6em; height: 1em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+    }
+        #ui.arrow_up::before {
+            position: absolute; top: -0.6em; left: -0.5em;
+            width: 0; height: 0;
+            content: "";
+            border-bottom: 0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+        }
+    /* 左矢印 */
+    #ui.arrow_left {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 1em; height: 0.6em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+    }
+        #ui.arrow_left:before {
+            position: absolute; top: -0.5em; left: -0.5em;
+            width: 0; height: 0;
+            content: "";
+            border-right: 0.8em solid #39a9d6; border-top: 0.8em solid transparent; border-bottom: 0.8em solid transparent;
+        }
+    /* 下矢印 */
+    #ui.arrow_down {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -9vh;
+        width: 0.6em; height: 1em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+    }
+        #ui.arrow_down:before {
+            position:absolute; top:0.8em; left:-0.5em;
+            width:0; height:0;
+            content:"";
+            border-top:0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+        }
+    /* 右矢印 */
+    #ui.arrow_right {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 1em; height: 0.6em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+    }
+        #ui.arrow_right:before {
+            position: absolute; top: -0.5em; left: 0.7em;
+            width: 0; height: 0;
+            content: "";
+            border-left: 0.8em solid #39a9d6; border-top: 0.8em solid transparent; border-bottom: 0.8em solid transparent;
+        }
+    /* 左回転*/
+    #ui.arrow_rotate_J {
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -9vh;
+       
+       /* display: inline-block;*/
+        width: var(--circle_size);
+        height: var(--circle_size);
+        text-align:center;
+        line-height: 8em;
+        border-radius: 50%;
+        border: solid 10px #39a9d6;
+    }
+        #ui.arrow_rotate_J:before {
+            position:absolute;
+            content:"";
+            width:0;
+            height:0;
+            border:1.7em solid transparent;
+            border-top:1.7em solid #39a9d6;
+            left:-1.7em;
+            top:1.2em;
+        }
+    /* 右回転 */
+    #ui.arrow_rotate_L {
+
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -9vh;
+       
+        /*display: inline-block;*/
+        width: var(--circle_size);;
+        height: var(--circle_size);;
+        text-align:center;
+        line-height: 9em;
+        border-radius: 50%;
+        border: solid 10px #39a9d6;
+       /* position: relative;
+        top: 190px;
+        left: 370px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        text-align:center;
+        line-height: 80px;
+        border-radius: 50%;
+        border: solid 10px #39a9d6;*/
+    }
+        #ui.arrow_rotate_L:before {
+            position: absolute;
+            top: 1.5em;
+            left: -1.7em;
+            width: 0;
+            height: 0;
+            content: "";
+            border-bottom: 1.7em solid #39a9d6;
+            border-left: 1.7em solid transparent;
+            border-right: 1.7em solid transparent;
+    
+        }
+
+    #ui.arrow_Diagonally_abover_right{
+            transform: rotate(45deg);
+            position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+            width: 0.6em; height: 1em; font-size: var(--arrow_size);
+            background-color: #39a9d6;
+    }
+        #ui.arrow_Diagonally_abover_right:before {
+            position: absolute; top: -0.6em; left: -0.5em;
+            width: 0; height: 0;
+            content: "";
+            border-bottom: 0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+    
+            }
+
+    #ui.arrow_Diagonally_below_right{
+        transform: rotate(135deg);
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 0.6em; height: 1em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+    }
+        #ui.arrow_Diagonally_below_right:before {
+        position: absolute; top: -0.6em; left: -0.5em;
+        width: 0; height: 0;
+        content: "";
+        border-bottom: 0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+        
+        }
+
+
+    #ui.arrow_Diagonally_below_left{
+        transform: rotate(225deg);
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 0.6em; height: 1em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+        }
+        #ui.arrow_Diagonally_below_left:before {
+        position: absolute; top: -0.6em; left: -0.5em;
+        width: 0; height: 0;
+        content: "";
+        border-bottom: 0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+            
+        }
+
+    #ui.arrow_Diagonally_abover_left{
+        transform: rotate(315deg);
+        position: relative;  margin-left: auto; margin-right: auto; bottom: -13vh;
+        width: 0.6em; height: 1em; font-size: var(--arrow_size);
+        background-color: #39a9d6;
+        }
+        #ui.arrow_Diagonally_abover_left:before {
+        position: absolute; top: -0.6em; left: -0.5em;
+        width: 0; height: 0;
+        content: "";
+        border-bottom: 0.8em solid #39a9d6; border-right: 0.8em solid transparent; border-left: 0.8em solid transparent; 
+                
+        }
+                    
+    
+    

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>ROS UI</title>
+    <meta charset="UTF-8">
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+    .full_picture{
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+    </style>
+    <script src="https://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    <script type="text/javascript" src="ROS_ope.js"></script>   <!-- UI -->
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <link rel="stylesheet" type="text/css" href="ROS_ope.css">   <!-- UI -->
+    <title>ROS Image Web Viewer</title>  
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+    .full_picture{
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+    </style>
+
+  </head>
+
+  <body>
+    <script>
+      var topic_name = "/usb_cam/image_raw";
+      //document.write("<img class='full_picture' src='http://192.168.2.131:8080/stream?topic=/usb_cam/image_raw'></img>");
+      document.write("<img src='http://"+location.hostname +":8080/stream?topic=/usb_cam/image_raw&type=ros_compressed'></img>");
+    </script>
+    <p>RosBridge status： <label id="rosbridge_status">Disconnect</label></p>
+    <p>Gamepad status：   <label id="gamepad_status">Disconnect</label></p>
+    <p>Gamepad buttons：   <label id="gamepad_buttons">None</label></p>
+    
+    <p>W buttons：   <label id="W">None</label></p>
+    <p>S buttons：   <label id="S">None</label></p>
+    <p>D buttons：   <label id="D">None</label></p>
+    <p>A buttons：   <label id="A">None</label></p>
+
+    <p>Gamepad axes：   <label id="gamepad_axes">None</label></p>
+
+    <!-- キーを押したら文字色が変化 -->
+    <!-- Wキー-->
+    <div id="running_Wkey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>W</div>
+    <!-- Aキー-->
+    <div id="running_Akey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>A</div>
+    <!-- Sキー-->
+    <div id="running_Skey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>S</div>
+    <!-- Dキー-->
+    <div id="running_Dkey" style="padding: 10px; margin-bottom: 10px; width: 50px; border: 1px solid #333333;" class>D</div>
+
+    <p>操作方法 <br>前： <kbd>W</kbd> <br>左： <kbd>A</kbd> <br>後： <kbd>S</kbd> <br>右： <kbd>D</kbd></p>
+  </body>
+
+  <script>
+    
+var Talker = {
+  ros : null,
+  name : "",
+  init : function(){
+    this.ros = new ROSLIB.Ros();
+    this.ros.on('error', function(error) {
+        document.getElementById('rosbridge_status').innerHTML = "Error";
+    });
+    this.ros.on('connection', function(error) {
+        document.getElementById('rosbridge_status').innerHTML = "Connect";
+    });
+    this.ros.on('close', function(error) {
+        document.getElementById('rosbridge_status').innerHTML = "Close";
+    });
+    this.ros.connect('ws://' + location.hostname + ':9090');
+  },
+  send : function(joy_data){
+    if(joy_data != null){
+      var pub = new ROSLIB.Topic({
+          ros : this.ros,
+          name : '/web/joy',
+          messageType : 'sensor_msgs/Joy'
+      });
+      pub.publish(joy_data);
+    }
+  },
+  getJoy : function() {
+    var pads = navigator.getGamepads ? navigator.getGamepads() :
+                    (navigator.webkitGetGamepads ? navigator.webkitGetGamepads : []);
+
+
+
+    var joy_data = new ROSLIB.Message({  axes:[], buttons:[]});
+
+
+    pad = 1;
+    if(1) {
+      document.getElementById("gamepad_status").innerHTML = "Connected";
+      document.getElementById("gamepad_buttons").innerHTML = "good";
+      document.getElementById("gamepad_axes").innerHTML = "none";
+    
+      var buttons = [];
+
+      document.body.addEventListener( 
+        'keydown',event => {
+      if(event.keyCode==87){
+      buttons[0]=1;
+      buttons[1]=0;
+      w=1;
+      s=0;
+      document.getElementById("W").innerHTML = buttons[0];
+      document.getElementById("S").innerHTML = buttons[1];
+      //buttons[0]=1;
+    } //Wキー
+      //document.getElementById("W").innerHTML = "1";
+    });
+
+    document.body.addEventListener( 
+        'keydown',event => {
+      if(event.keyCode==83){ 
+      buttons[1]=1;
+      buttons[0]=0;
+      s=1;
+      w=0;
+      document.getElementById("S").innerHTML = buttons[1];
+      document.getElementById("W").innerHTML = buttons[0];
+    } //Sキー
+    });
+
+
+      document.body.addEventListener( 
+        'keydown',event => {
+      if(event.keyCode==68){
+      buttons[2]=1;
+      buttons[3]=0;
+      d=1;
+      a=0;
+      document.getElementById("D").innerHTML = buttons[2];
+      document.getElementById("A").innerHTML = buttons[3];
+      //pad.buttons[2].value=1;
+    } //Dキー
+    });
+
+
+      document.body.addEventListener( 
+        'keydown',event => {
+      if(event.keyCode==65){
+        buttons[3]=1;
+        buttons[2]=0;
+        a=1;
+        d=0;
+      document.getElementById("A").innerHTML = buttons[3];
+      document.getElementById("D").innerHTML = buttons[2];
+      
+    } //A印キー
+      /*if (event.key === 'w' ) {
+          buttons[0]=1;
+        }
+        
+        else if(event.key === 'a' ) {
+          alert("aが押されました")
+          buttons[1]=1;
+        }
+
+        else if(event.key === 's' ) {
+          alert("sが押されました")
+          buttons[2]=1;
+        }
+
+        else if(event.key === 'd' ) {
+          alert("dが押されました")
+          buttons[3]=1;
+        }*/
+    });
+
+    document.body.addEventListener("keyup",()=>{ //キーボードのキーを離したときに処理
+      if(event.keyCode==87){
+      buttons[0]=0;
+      w=0;
+      document.getElementById("W").innerHTML = buttons[0];
+      } //Wキー
+      //document.getElementById("W").innerHTML = "0";
+    });
+
+    document.body.addEventListener("keyup",()=>{
+      if(event.keyCode==83){
+      buttons[1]=0;
+      s=0;
+      document.getElementById("S").innerHTML = buttons[1]=0;;
+      //pad.buttons[1].value=0;
+    } //Sキー
+    });
+
+
+      document.body.addEventListener("keyup",()=>{
+      if(event.keyCode==68){
+        buttons[2]=0;
+        d=0;
+      document.getElementById("D").innerHTML = buttons[2];
+      //pad.buttons[2].value=0;
+    } //Dキー
+    });
+
+
+      document.body.addEventListener("keyup",()=>{
+      if(event.keyCode==65){
+        buttons[3]=0;
+        a=0;
+      document.getElementById("A").innerHTML = buttons[3];
+      //pad.buttons[3].value=0;
+    } //Aキー
+    });
+
+
+
+      //pad.buttons.length=4;
+      //buttons for display
+      //var but0 = "";
+      //for(var i = 0 ; i < pad.buttons.length; i++) {
+        //but0 += "but" + 0 + ":" + buttons0+ "<br>";//or .pressed
+      //}
+      
+      //axes for display
+      //var ax = "";
+      //for(var i = 0 ; i < pad.axes.length; i++) {
+        //ax += pad.axes[i] + '<br>';
+      //}
+      //document.getElementById("gamepad_axes").innerHTML = ax;
+
+      //for json
+
+      //pad.buttons.length=4;
+      //for(var i = 0 ; i < pad.buttons.length; i++) {
+        //joy_data.buttons.push(Number(pad.buttons[i].pressed));      
+      //}
+
+     var buttons = [];
+
+     buttons[0] = w;
+     buttons[1] = s;
+     buttons[2] = d;
+     buttons[3] = a;
+
+     joy_data.buttons.push(Number(buttons[0])); 
+     joy_data.buttons.push(Number(buttons[1])); 
+     joy_data.buttons.push(Number(buttons[2])); 
+     joy_data.buttons.push(Number(buttons[3])); 
+
+
+
+      //pad.axes.length=4;
+
+      //for(var i = 0 ; i < pad.axes.length; i++) {
+        //joy_data.axes.push(pad.axes[i]);
+      //}  
+      
+      var axes = [];
+
+      axes[0]=1.0;
+      axes[1]=0.0;
+      axes[2]=0.0;
+      axes[3]=0.0;
+
+      //joy_data.axes.push(axes[0]);
+      //joy_data.axes.push(axes[1]);
+      //joy_data.axes.push(axes[2]);
+      //joy_data.axes.push(axes[3]);
+
+       //for(var i = 0 ; i < pad.buttons.length; i++) {
+        //joy_data.axes.push(pad.buttons[i].value); 
+      //}
+
+      //joy_data.axes.push(buttons[0]);
+      //joy_data.axes.push(buttons[1]);
+      //joy_data.axes.push(buttons[2]);
+     // joy_data.axes.push(buttons[3]);
+
+      console.log(joy_data);
+      return joy_data
+    }
+
+    else{
+      document.getElementById("gamepad_status").innerHTML = "Disonnected";
+      joy_data = null
+    }
+  }
+}
+Talker.init();
+
+window.onload = function(){
+};
+window.onunload = function(){
+  Talker.ros.close();
+};
+
+function update(){
+  joy_data = Talker.getJoy();
+  Talker.send(joy_data);
+}
+setInterval("update()",100);
+  </script>
+</html>

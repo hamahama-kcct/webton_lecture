@@ -1,0 +1,2 @@
+ros_lecture/web_lecture
+-DCATKIN_DEVEL_PREFIX=/home/webton/catkin_mech/devel -DCMAKE_INSTALL_PREFIX=/home/webton/catkin_mech/install -G Unix Makefiles

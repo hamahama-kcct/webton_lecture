@@ -1,0 +1,10 @@
+(cl:defpackage web_lecture-srv
+  (:use )
+  (:export
+   "STRINGSTAMPLIST"
+   "<STRINGSTAMPLIST-REQUEST>"
+   "STRINGSTAMPLIST-REQUEST"
+   "<STRINGSTAMPLIST-RESPONSE>"
+   "STRINGSTAMPLIST-RESPONSE"
+  ))
+
